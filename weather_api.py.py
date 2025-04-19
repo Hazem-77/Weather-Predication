@@ -15,7 +15,9 @@ import os
 from flask import Flask, request, jsonify
 app = Flask(__Weather.Predication_)
 app = FastAPI()
-
+@app.route('/')
+def home():
+    return "Weather Prediction API is running!"
 API_KEY = "39357f117056c535298fe0df516ce3e3"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
