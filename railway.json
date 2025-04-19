@@ -2,7 +2,7 @@
   "build": {
     "builder": "NIXPACKS",
     "config": {
-      "startCommand": "gunicorn app:app"
+      "startCommand": "gunicorn app:app--timeout 120"
     }
   }
 }
