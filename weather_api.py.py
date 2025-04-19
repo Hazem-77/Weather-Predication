@@ -13,7 +13,7 @@ import random
 from pathlib import Path
 import os
 from flask import Flask, request, jsonify
-
+app = Flask(__Weather.Predication_)
 app = FastAPI()
 
 API_KEY = "39357f117056c535298fe0df516ce3e3"
@@ -134,14 +134,8 @@ async def predict_weather(city_input: CityInput):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+        
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("weather_api:app",
-        host="0.0.0.0",
-        port=5000,
-        reload=True,
-        reload_dirs=["."]
-    )
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))        
+if __Weather.Predication__ == '__main__':
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
