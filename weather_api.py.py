@@ -11,6 +11,8 @@ from datetime import datetime, timedelta
 import pytz
 import random
 from pathlib import Path
+import os
+from flask import Flask, request, jsonify
 
 app = FastAPI()
 
@@ -141,3 +143,5 @@ if __name__ == "__main__":
         reload=True,
         reload_dirs=["."]
     )
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))        
